@@ -78,14 +78,21 @@ fun AltGreeting2(
 @Preview(locale = "de-rDE")
 fun Welcome() {
     Text(
+        // androidx.compose.material3.Text
+        // strings.xml
         text = stringResource(id = R.string.welcome),
         style = MaterialTheme.typography.bodyLarge
     )
 }
 
+// text input field and done button
+// Modifiers are a key technique in Jetpack Compose
+//to influence both the look and behavior of composable functions
 @Composable
 fun TextAndButton(name: MutableState<String>, nameEntered: MutableState<Boolean>) {
+    // androidx.compose.foundation.layout
     Row(modifier = Modifier.padding(top = 8.dp)) {
+        // androidx.compose.material3
         TextField(
             value = name.value,
             onValueChange = {
@@ -106,6 +113,7 @@ fun TextAndButton(name: MutableState<String>, nameEntered: MutableState<Boolean>
                 nameEntered.value = true
             })
         )
+        // androidx.compose.material
         Button(modifier = Modifier
             .alignByBaseline()
             .padding(8.dp),
